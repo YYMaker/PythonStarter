@@ -58,6 +58,8 @@ mesh(网)
 
 # ex2 笔记
 
+tags: 注释
+
 ## 1. 注释的作用
 
 1. 使用自然语言描述某段代码的功能
@@ -78,7 +80,337 @@ mesh(网)
 
 # ex3 笔记
 
+tags: 运算符 浮点数 布尔值 运算符有优先级
+
 ## 1. 运算符
+
+
+```
++ plus加号
+- minus减号
+/ slash斜杠
+* asterisk星号
+% percent百分号
+< less-than小于号
+> greater-than大于号
+<= less-than-equal小于等于号
+>= greater-than-equal大于等于号
+```
+## 2. 浮点数
+浮点数(floating point number)
+
+```
+并不是说小数叫做浮点数。准确的来说：“浮点数”是一种表示数字的标准，整数也可以用浮点数的格式来存储。
+
+当代大部分计算机和程序在处理浮点数时所遵循的标准是由IEEE和ANSI制定的。比如，单精度的浮点数以4个字节来表示，这4个字节可以分为三个部分：1位的符号位(0代表正数，1代表负数)，8位用作指数，最后的23位表示有效数字。
+
+“浮点数”的定义是相对于“定点数”来说的，它们是两种表示小数的方式。
+
+所谓“定点”是指小数点的位置总是在数的某个特定位置。
+比如在银行系统中，小数点的位置总是在两位小数之前(这两位小数用来表示角和分)。其可以使用BCD码来对小数进行编码。
+
+浮点格式则是基于科学计数法的，它是存储极大或极小数的理想方式。但使用浮点数来表示数据的时候，由于其标准制定方面的原因可能会带来一些问题，例如：某两个不同的整数在单精度浮点数的表示方法下很可能无法区分。
+
+作者：vetch
+链接：https://www.zhihu.com/question/19848808/answer/22219209
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
+
+“浮点数”的定义是相对于“定点数”来说的。
+在计算机内部，数据以二进制的形式存储和运算，而计算机内表示的数，又被分成整数和实数两大类。
+其中整数一般用定点数表示，定点数指小数点在数中有固定的位置（一般来说整数的小数点都在最末位数后）。
+实数一般用浮点数表示，因为它的小数点位置不固定。浮点数是既有整数又有小数的数，纯小数可以看作实数的特例。
+
+作者：梁白开
+链接：https://www.zhihu.com/question/19848808/answer/19978437
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
+```
+## 3. 布尔类型
+
+boolean 布尔值
+
+True 真
+False 假
+
+## 4. 运算符优先级
+
+美国我们用 PEMDAS 这个简称来辅助记忆,它的意思是“括号、指数、乘、除、加、减”—— Parentheses Exponents Multiplication Division Addition Subtraction ——这也是 Python 里的运算优先级。
+
+
+
+# ex4 笔记
+
+## 1. 变量名
+
+程序员通过使用变量名可以让他们的程序读起来更像英语。变量名可以让程序的内容更加明了。
+
+变量名不能以数字开始.
+
+```
+4. 记住 = 的名字是等于(equal),它的作用是为东西取名。
+```
+
+
+***思考:
+在C语言中, 变量名标记的是一块内存空间, 或者是内存空间的地址.
+看到书中出现的这句, 觉得在python中更多的是为数据起名字, 应为在python中定义变量非常的随意. 并且python中的变量是弱类型的, 也就是说python中一个变量可以存放任何内容.***
+
+## 2. 变量未定义错误
+
+```
+Traceback (most recent call last):  File "ex4.py", line 8, in <module>   average_passengers_per_car = car_pool_capacity / passengerNameError: name 'car_pool_capacity' is not defined
+```
+not defined 未定义
+
+## 3. 变量赋值
+
+```
+= single-equal (单个等号, 表示赋值)
+
+== double-equal (双等号, 用来判断两边是否相等)
+```
+
+
+***为什么倒着读代码?
+正着读代码, 大脑会根据前文意思自动脑补缺失错误的信息, 从而不容易发现错误. 而倒着读就会只注意到单字, 单词, 更容易发现错误.***
+
+
+
+# ex5 笔记
+
+tags: 
+
+## 0. code
+
+```
+#ex5
+my_name = 'xxxx'
+my_age = 35 #not a lie ^_^
+my_height = 74 #inches
+my_weight = 180 #lbs
+my_eyes = 'Blue'
+my_teeth = 'White'
+my_hair = 'Brown'
+
+print "Let's talk about %s." % my_name
+print "He's %d inches tall." % my_height
+print "He's %d pounds heavy." % my_weight
+print "Actually that's not too heavy."
+print "He's got %s eyes and %s hair." % (my_eyes, my_hair)
+print "His teeth are usually %s depending on the coffee." % my_teeth
+
+
+# this line is tricky, try to get it exactly right
+print "If I add %d, %d, and %d I get %d." % (my_age, my_weight, my_height, my_age + my_weight + my_height)
+```
+
+## 1. 格式化字符串
+
+format string 格式化字符串
+
+字符串是程序传递信息最主要的一种方式. 展示内容, 打印, 传输
+
+## 2. 格式控制工具
+
+%d 十进制
+%s 字符串
+%r 无论什么都输出 (通常用来debug) representation
+
+## 3. 四舍五入
+
+round函数
+round(1.7333)
+
+四舍五入, 变整数
+
+***问题: 小数位保留四舍五入怎么做?***
+
+# ex6 笔记
+
+tags: 字符串
+
+## 0. code
+
+```
+#ex6 
+x = "There are %d types of people." % 10
+binary  = "binary"
+do_not = "don't"
+y = "Those who know %s and those who %s." % (binary, do_not)
+
+print x
+print y
+
+print "I said: %r." % x
+print "I also said: '%s'. " % y
+
+hilarious = False
+joke_evaluation = "Isn't that joke so funny?! %r"
+
+print joke_evaluation % hilarious
+
+w = "This is the left side of..."
+e = "a string with a right side."
+
+print w + e
+```
+
+## 1. 字符串拼接
+
+```
+print str1 + str2
+```
+
+## 2. 格式化字符串
+
+print 中多个参数拼接
+
+```
+print "%d, %d, %d", % (xxx , xxx, xxx)
+```
+
+## 3. 错误
+
+没有足够的参数提供给格式化字符串使用
+
+```
+Traceback (most recent call last):
+  File "ex6.py", line 10, in <module>
+    print "I also said: '%s'. %d" % y
+TypeError: not enough arguments for format string
+```
+
+
+格式化字符串中没有把所有的参数输出
+
+```
+Traceback (most recent call last):
+  File "ex6.py", line 10, in <module>
+    print "I also said: ''. " % y
+TypeError: not all arguments converted during string formatting
+```
+
+
+
+# ex7 笔记
+
+## 0. code
+
+```
+#ex7
+
+print "Mary had a little lamb."
+print "Its fleece was white as %s." % 'snow'
+print "And everywhere that Mary went."
+print "." * 10 # what'd that do?
+
+end1 = "C"
+end2 = "h"
+end3 = "e"
+end4 = "e"
+end5 = "s"
+end6 = "e"
+end7 = "B"
+end8 = "u"
+end9 = "r"
+end10 = "g"
+end11 = "e"
+end12 = "r"
+
+# watch that comma at the end. try removing it to see what happens
+print end1 + end2 + end3 + end4 + end5 + end6,
+print end7 + end8 + end9 + end10 + end11 + end12
+```
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex7.py
+Mary had a little lamb.
+Its fleece was white as snow.
+And everywhere that Mary went.
+..........
+Cheese Burger
+```
+
+## 1. 逗号的作用
+
+看起来像是连接字符串的作用. 不是默认输出换行符, 而是输出一个空格. 不可多个连用.
+
+
+## 2. 输出多次
+
+print 'Hello' * 10
+
+
+
+# Ex8: printing, printing
+
+## 0. code
+
+```
+#ex8
+
+formatter = "%r %r %r %r"
+
+print formatter % (1, 2, 3, 4)
+print formatter % ("one", "two", "three", "four")
+print formatter % (True, False, False, True)
+print formatter % (formatter, formatter, formatter, formatter)
+print formatter % (
+    "I had this thing.",
+    "That you could type up right.",
+    "But it didn't sing.",
+    "So I said goodnight."
+)
+```
+
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex8.py
+1 2 3 4
+'one' 'two' 'three' 'four'
+True False False True
+'%r %r %r %r' '%r %r %r %r' '%r %r %r %r' '%r %r %r %r'
+'I had this thing.' 'That you could type up right.' "But it didn't sing." 'So I said goodnight.'
+```
+
+## 1. %r 的作用
+
+%r 通常用作获取debug信息
+The %r will give you the "raw programmer's" version of variable, also known as the "representation."
+获取程序员级的数据
+
+## 2. True False
+True 和 False 在 python 中被当做keywords(关键字)代表布尔值的真和假, 如果加引号就变成了字符串. 
+
+
+
+# Ex.9 printing, printing, printing
+
+## 0. code
+
+```
+# Here's some new strange stuff, remember type it exactly
+
+days = "Mon Tue Wed Thu Fri Sat Sun"
+months = "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
+
+print "Here are the days: ", days
+print "Here are the months: ", months
+
+print """
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+Even 4 lines if we want, or 5, or 6.
+"""
+
+print "%r" % months
+```
+
+
 
 
 
