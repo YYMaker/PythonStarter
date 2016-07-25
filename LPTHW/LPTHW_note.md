@@ -410,7 +410,86 @@ Even 4 lines if we want, or 5, or 6.
 print "%r" % months
 ```
 
+输出结果:
 
+```
+YY:LPTHW Y2Maker$ python ex9.py
+Here are the days:  Mon Tue Wed Thu Fri Sat Sun
+Here are the months:
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+Even 4 lines if we want, or 5, or 6.
+
+'\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug'
+```
+
+
+
+# Ex.10 What Was That?
+
+## 0. code
+
+```
+tabby_cat = "\tI'm tabbed in."
+persian_cat = "I'm split\non a line."
+backslash_cat = "I'm \\ a \\ cat."
+
+fat_cat = """
+I'll do a list:
+\t* Cat food
+\t* Fishies
+\t* Catnip\n\t* Grass
+"""
+
+print tabby_cat
+print persian_cat
+print backslash_cat
+print fat_cat
+```
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex10.py
+	I'm tabbed in.
+I'm split
+on a line.
+I'm \ a \ cat.
+
+I'll do a list:
+	* Cat food
+	* Fishies
+	* Catnip
+	* Grass
+```
+
+## 1.转译字符
+
+```
+\\   Backslash () 反斜杠￼￼￼￼\'   Single quote (‘) 单引号￼￼￼￼\"   Double quote (”) 双引号￼￼￼￼\a   ASCII Bell (BEL) 响铃符￼￼￼￼\b   ASCII Backspace (BS) 退格符￼￼￼￼\f   ASCII Formfeed (FF) 进纸符￼￼￼￼\n   ASCII Linefeed (LF) 换行符\N{name} 
+Unicode 数据 库中的字符名, 其中 name 就 是它的名字 (Unicodeonly)\r   ASCII Carriage Return (CR) 回车符￼￼￼￼\t   ASCII Horizontal Tab (TAB) 水 平制表符￼￼￼￼
+\uxxxx    
+值为 16 位十 六进制值 xxxx 的字符 (Unicode only)
+
+￼￼￼￼\Uxxxxxxxx
+值为 32 位十 六进制值 xxxx 的字符 (UnicodeUnicode 数据 库中的字符名, 其中 name 就 是它的名字 (Unicodeonly)
+
+\v    ASCII Vertical Tab (VT) 垂直制 表符\ooo  值为八进制值 ooo 的字符\xhh  值为十六进制 数 hh 的字符
+
+```
+
+## 2. 换行
+在python中代码中的换行可以体现在最终输入内容中, 区别于C语言. 
+在python代码中, 字符串在代码中换行就相当于输入了 '\n' 
 
 
 
