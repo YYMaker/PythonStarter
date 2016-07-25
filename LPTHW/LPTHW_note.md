@@ -492,6 +492,144 @@ Unicode 数据 库中的字符名, 其中 name 就 是它的名字 (Unicodeonly
 在python代码中, 字符串在代码中换行就相当于输入了 '\n' 
 
 
+# Ex.11 Asking Questions
+
+## 0. Code
+
+
+```
+print "How old are you?",
+age = raw_input()
+print "How tall are you?",
+height = raw_input()
+print "How much do you weigh?",
+weight = raw_input()
+
+print "So, you're %r old, %r tall and %r heavy." % (age, height, weight)
+```
+
+运行结果:
+
+```
+How old are you? 10
+How tall are you? 10
+How much do you weigh? 10
+So, you're '10' old, '10' tall and '10' heavy.
+```
+
+## 1. print逗号的作用
+
+在print 后加 逗号, 似乎可以消掉 '\n'
+
+## 2. 获取数字 字符串转数字
+
+```
+a = int(raw_input())
+print a * 10
+
+b = raw_input()
+print b * 10
+
+```
+
+## 3. input 和 raw_input 的区别
+
+***TODO***
+
+
+# Ex. 12 Prompting People
+
+## 0. Code
+
+```
+age = raw_input("How old are you? ")
+height = raw_input("How tall are you? ")
+weight  = raw_input("How much do you weigh? ")
+
+print "So, you're %r old, %r tall and %r heavy." % (
+       age, height, weight)
+```
+
+
+
+
+
+## 1. raw_input
+
+pydoc raw_input
+
+```
+Help on built-in function raw_input in module __builtin__:
+
+raw_input(...)
+    raw_input([prompt]) -> string
+
+    Read a string from standard input.  The trailing newline is stripped.
+    If the user hits EOF (Unix: Ctl-D, Windows: Ctl-Z+Return), raise EOFError.
+    On Unix, GNU readline is used if enabled.  The prompt string, if given,
+    is printed without a trailing newline before reading.
+```
+
+## 2. pydoc 命令
+
+
+
+Windows下怎么运行pydoc? 
+
+```
+$ python -m pydoc raw_input
+```
+
+
+
+# Ex. 13 Parameters, Unpacking, Variables 参数, 解包, 变量
+
+## 0. Code
+
+```
+from sys import argv
+
+script, first, second, third = argv
+
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Yout third variable is:", third
+```
+
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex13.py hehe haha heihei
+The script is called: ex13.py
+Your first variable is: hehe
+Your second variable is: haha
+Yout third variable is: heihei
+```
+
+## 1. import 引入
+
+import 可以引入 python的各种模块 (modules)
+
+unpack 解包
+
+
+## 2. 不定参数的情况怎么处理?
+
+
+
+## 3. 错误
+
+
+```
+Traceback (most recent call last):
+  File "ex13.py", line 3, in <module>
+    script, first, second, third = argv
+ValueError: need more than 3 values to unpack
+```
+
+拆解的参数个数大于参数总数, 缺少参数的错误提示
+
 
 
 
