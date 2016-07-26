@@ -961,7 +961,8 @@ current_line = current_line + 1
 print_a_line(current_line, current_file)
 
 ```
-运行结果
+
+运行结果:
 
 ```
 YY:LPTHW Y2Maker$ python ex20.py test.txt
@@ -990,10 +991,83 @@ Let's print three lines:
 读取一行
 
 
+# Ex. 21 Funtions Can Return Something 函数可以返回
+
+
+## 0. Code
+
+```
+def add(a, b):
+    print "ADDING %d + %d" % (a, b)
+    return a + b
+
+def subtract(a, b):
+    print "SUBTRACTING %d - %d" % (a, b)
+    return a - b
+
+def multiply(a, b):
+    print "MULTIPLYING %d * %d" % (a, b)
+    return a * b
+
+def divide(a, b):
+    print "DIVIDING %d / %d" % (a, b)
+    return a / b
+
+
+print "Let's do some math with just functions!"
+
+age = add(30, 5)
+height = subtract(78, 4)
+weight = multiply(90, 2)
+iq = divide(100, 2)
+
+print "Age: %d, Height: %d, Weight: %d, IQ: %d" % (age, height, weight, iq)
+
+# A puzzle for extra credit, type it in anyway.
+print "Here is a puzzle."
+
+what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
+print "That becomes: ", what, "Can you do it by hand?"
+
+# 35 + ( 74 - ( 180 * (50 / 2)))
+
+```
+
+
+运行结果:
+
+```
+Let's do some math with just functions!
+ADDING 30 + 5
+SUBTRACTING 78 - 4
+MULTIPLYING 90 * 2
+DIVIDING 100 / 2
+Age: 35, Height: 74, Weight: 180, IQ: 50
+Here is a puzzle.
+DIVIDING 50 / 2
+MULTIPLYING 180 * 25
+SUBTRACTING 74 - 4500
+ADDING 35 + -4426
+That becomes:  -4391 Can you do it by hand?
+
+```
+
+## 1. 返回值
+
+
+*** python的函数返回值是否可以有多个? ***
 
 
 
+## 2. float(raw_input())
 
+输入浮点数
+
+
+adding
+subtracting
+multiplying
+dividing
 
 
 
