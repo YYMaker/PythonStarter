@@ -921,6 +921,83 @@ cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
 
 
 
+# Ex.20 Functions And Files 函数和文件
+
+## 0. Code
+
+```
+from sys import argv
+
+script, input_file = argv
+
+def print_all(f):
+    print f.read()
+
+def rewind(f):
+    f.seek(0)
+
+def print_a_line(line_count, f):
+    print line_count, f.readline()
+
+current_file = open(input_file)
+
+print "First let's print the whole file:\n"
+
+print_all(current_file)
+
+print "Now let's rewind, kind of like a tape."
+
+rewind(current_file)
+
+print "Let's print three lines:"
+
+current_line = 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
+
+```
+运行结果
+
+```
+YY:LPTHW Y2Maker$ python ex20.py test.txt
+First let's print the whole file:
+
+hehe
+haha
+heihei
+
+Now let's rewind, kind of like a tape.
+Let's print three lines:
+1 hehe
+
+2 haha
+
+3 heihei
+
+```
+
+## 1. seek
+
+偏移文件读写指针
+
+## 2. readline
+
+读取一行
+
+
+
+
+
+
+
+
+
+
 
 
 
