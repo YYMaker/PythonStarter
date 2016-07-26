@@ -7,7 +7,7 @@ tags: print 字符串 引号 错误提示 字符编码
 在print中的字符串, 可以使用多种引号
 单引号 ' 
 双引号 "
-三引号 ''' 三个单引号
+三引号 ''' """ 三个单引号/三个双引号
 
 当在字符串中使用到 单引号 或者 双引号 时可以使用 双引号 或者 单引号 引用字符串, 如果同时使用了单双引号在字符串中 可以使用三引号引用标注字符串. 
 
@@ -75,6 +75,14 @@ tags: 注释
 
 
 ***作者在这里提出一个倒着读代码检查错误的方法, 有什么好处???***
+
+多行注释, 可以用三引号
+
+编辑器多行注释:
+vim
+1. 进入命令行模式，按ctrl + v进入 visual block模式，然后按j, 或者k选中多行，把需要注释的行标记起来
+2. 按大写字母I，再插入注释符，例如//
+3. 按esc键就会全部注释了
 
 
 
@@ -148,7 +156,7 @@ False 假
 变量名不能以数字开始.
 
 ```
-4. 记住 = 的名字是等于(equal),它的作用是为东西取名。
+4. 记住 = 的名字是等于(equal),它的作用是为数据取名。
 ```
 
 
@@ -174,6 +182,8 @@ not defined 未定义
 
 ***为什么倒着读代码?
 正着读代码, 大脑会根据前文意思自动脑补缺失错误的信息, 从而不容易发现错误. 而倒着读就会只注意到单字, 单词, 更容易发现错误.***
+
+研表究明，汉字的序顺并不定一能影阅响读，比如当你看完这句话后，才发这现里的字全是都乱的、。
 
 
 
@@ -225,6 +235,9 @@ round(1.7333)
 四舍五入, 变整数
 
 ***问题: 小数位保留四舍五入怎么做?***
+
+round(1.7333, 2)
+第二个参数代表保留小数点后几位. 
 
 # ex6 笔记
 
@@ -629,6 +642,82 @@ ValueError: need more than 3 values to unpack
 ```
 
 拆解的参数个数大于参数总数, 缺少参数的错误提示
+
+
+# Ex. 14 Prompting And passing 提示和传递
+
+
+## 0. Code
+
+```
+from sys import argv
+
+script, user_name = argv
+prompt = '>>>'
+
+print "Hi %s, I'm the %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s?" % user_name
+likes = raw_input(prompt)
+
+print "Where do you live %s?" % user_name
+lives = raw_input(prompt)
+
+print "What kind of computer do you have?"
+computer = raw_input(prompt)
+
+print """
+Alright, so you said %r about liking me.
+You live in %r. Not sure where that is.
+And you have a %r computer. Nice.
+""" % (likes, lives, computer)
+```
+
+# Ex. 15 Reading Files 读取文件
+
+## 0. Code
+
+```
+from sys import argv
+
+script, filename = argv
+
+txt = open(filename)
+
+print "Here's your file %r:" % filename
+print txt.read()
+
+print "Type the filename again:"
+file_again = raw_input("> ")
+
+txt_again = open(file_again)
+
+print txt_again.read()
+```
+
+## 1. open
+
+open() 打开文件
+
+```
+open(...)
+    open(name[, mode[, buffering]]) -> file object
+
+    Open a file using the file() type, returns a file object.  This is the
+    preferred way to open a file.  See file.__doc__ for further information.
+```
+多个参数:
+参数1 : 打开文件的, 文件名
+
+## 2. txt.read()
+
+txt.read()
+
+打开文件后赋值给txt, 使其执行read, 读取文件内容. 
+
+
+# Ex. 16
+
 
 
 
