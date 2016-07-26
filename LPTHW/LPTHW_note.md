@@ -716,7 +716,127 @@ txt.read()
 打开文件后赋值给txt, 使其执行read, 读取文件内容. 
 
 
-# Ex. 16
+# Ex.16 Reading and Writing Files 读写文件
+
+## 0. Code
+
+
+```
+from sys import argv
+
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print "If you don't want that, hit CTRL-C(^C)."
+print "If you do want that, hit RETURN."
+
+raw_input("?")
+
+print "Opening the file..."
+target = open(filename, 'w')
+
+print "Truncating the file. Goodbye!"
+target.truncate()
+
+print "Now I'm going to ask you for three lines."
+line1 = raw_input("line 1: ")
+line2 = raw_input("line 2: ")
+line3 = raw_input("line 3: ")
+
+print "I'm going to write these to the file."
+
+target.write(line1)
+target.write('\n')
+target.write(line2)
+target.write('\n')
+target.write(line3)
+target.write('\n')
+
+print "And finally, we close it."
+target.close()
+```
+
+运行结果:
+
+argv 传入 filename, 通过 truncate 清空文件内容, 之后使用 write 将数据写入文件
+
+
+## 1. open 参数
+
+不指定参数, open 默认是以只读的方式打开. 
+
+w 写入
+r 读取
+a 追加
+
+w+
+r+
+a+
+
+*** 同时以读写的方式打开 ***
+
+
+# Ex. 17 More Files 更多文件操作
+
+## 0. Code
+
+```
+from sys import argv
+from os.path import exists
+
+script, form_file, to_file = argv
+
+print "Copying from %s to %s" % (from_file, to_file)
+
+# we could do these two on one line too, how?
+
+in_file = open(from_file)
+indata = in_file.read()
+
+print "The input file is %d bytes long" % len(indata)
+
+print "Does the output file exist? %r" % exists(to_file)
+print "Ready, hit RETURN to continue, CTRL-C to abort."
+raw_input()
+
+out_file = open(to_file, 'w')
+out_file.write(indata)
+
+print "Alright, all done."
+
+out_file.close()
+in_file.close()
+
+```
+
+运行结果:
+
+输入 两个文件名, 将第一个文件的内容, 写入到第二个文件中
+
+## 1. len函数 
+
+len()
+统计字符串长度, 文件内容是 "hello"为什么是 6
+应为使用vim编辑之后 在行尾会加上'0x0a'的字符, 也就是换行. 
+
+## 2. exists
+exists 判断文件是否存在, 返回布尔值
+
+属于模块 from os.path import exists
+
+
+## 3. open w参数
+
+w参数会直接创建文件.
+
+## 4. close
+
+关闭打开的文件
+
+*** 使用read 读到文件末尾, 会自动关闭文件吗? ***
+
+
+# Ex.18 Names, Variables, Code, Functions 命名 变量 代码 函数
 
 
 
