@@ -1391,6 +1391,103 @@ who
 ## 1. 
 
 
+## Ex.27 Memorizing Logic 记住这些逻辑
+
+## 0. Code
+
+```
+
+print True and True
+print True and False
+print False and False
+
+print True or True
+print True or False
+print False or False
+
+print not True
+print not False
+
+# != not equal
+# == equal
+# >= greater than equal
+# <= less than equal
+# > greater
+# < less
+
+```
+
+
+# Ex.28 Boolean Practice 布尔表达式练习
+
+## 0. Code
+
+```
+print True and True  # True
+print False and False # False
+print
+print 1 == 1 and 2 == 1 #False
+print "test" == "test" #True
+print 1 == 1 or 2 != 1    #True
+print True and 1 == 1     #True
+print False and 0 != 0    #False
+print True or 1 == 1      #True
+print "test" == "testing" #False
+print 1 != 0 and 2 == 1   #False
+print "test" != "testing" #True
+print "test" == 1         #False
+print
+print not (True and False)    #True
+print not (1 == 1 and 0 != 1) #False
+print not (10 == 1 or 1000 == 1000) #False
+print not (1 != 10 or 3 == 4)       #False
+print not ("testing" == "testing" and "Zed" == "Cool Guy") #True
+print 1 == 1 and not("testing" == 1 or 1 == 0) #True
+print "chunky" == "bacon" and not (3 == 4 or 3 == 3) #False
+print 3 == 3 and not ("testing" == "testing" or "Python" == "Fun") #False
+```
+
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex28.py
+True
+False
+
+False
+True
+True
+True
+False
+True
+False
+False
+True
+False
+
+True
+False
+False
+False
+True
+True
+False
+False
+
+```
+
+## 1. 
+
+
+为什么 "test" and "test" 返回 "test", 1 and 1 返回 1,而不是返回 True 呢?Python 和很多语言一样,都是返回两个被操作对象中的一个,而非它们的布尔表达式 True 或 False 。这意味着如果你写了 False and 1 ,你得到的是第一个操作字元 (False),而非第二个字元(1)。多多实验一下。
+
+## 2. 短路逻辑, 逻辑短路
+
+>
+任何以 False 开头的 and 语句都会直接被处理成 False 并且不会继续检查后面 语句了。任何包含 True 的 or 语句,只要处理到 True 这个字样,就不会继续向下推算, Warning 复杂的逻辑表达式一开始看上去可能会让你觉得很难。而且你也许已经碰壁过了,不过别灰心,这些 “逻辑体操”式的训练只是让你逐渐习惯起来,这样后面你可以轻易应对编程里边更酷的一些东西。只要你坚持下去,不放过自己做错的地方就行了。如果你暂时不太能理解也没关系,弄懂的时候总会到来的。而是直接返回 True 了。不过还是要确保整个语句都能正常处理,以方便日后理解和使用 代码。
+
+
+
 
 
  
