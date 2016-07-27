@@ -1488,6 +1488,110 @@ False
 
 
 
+# Ex.29 What if 如果
+
+
+## 0. Code
+
+```
+people = 20
+cats = 30
+dogs = 15
+
+if people < cats:
+    print "Too many cats! The world is doomed!"
+
+if people > cats:
+    print "Not many cats! The world is saved!"
+
+if people < dogs:
+    print "The world is drooled on!"
+
+if people > dogs:
+    print "The world is dry!"
+
+
+dogs += 5
+
+if people >= dogs:
+    print "People are greater than or equal to dogs."
+
+if people <= dogs:
+    print "People are less than or equal to dogs."
+
+if people == dogs:
+    print "People are dogs."
+
+```
+
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex29.py
+Too many cats! The world is doomed!
+The world is dry!
+People are greater than or equal to dogs.
+People are less than or equal to dogs.
+People are dogs.
+
+```
+
+
+# Ex.30 Else and If 
+
+
+# 0. Code
+
+```
+people = 30
+cars = 40
+buses = 15
+
+if cars > people:
+    print "We should take the cars."
+elif cars < people:
+    print "We should not take the cars."
+else:
+    print "We can't decide."
+
+if buses > cars:
+    print "That's too many buses."
+elif buses < cars:
+    print "Maybe we could take the buses."
+else:
+    print "We still can't decide."
+
+if people > buses:
+    print "Alright, let's just take the buses."
+else:
+    print "Fine, let's stay home then."
+
+```
+
+运行结果:
+
+```
+YY:LPTHW Y2Maker$ python ex30.py
+We should take the cars.
+Maybe we could take the buses.
+Alright, let's just take the buses.
+```
+
+
+## 1. elif
+
+if
+
+elif
+
+else
+
+# Ex.31 
+
+
+
+
+
 
 
  
