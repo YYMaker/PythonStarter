@@ -1055,7 +1055,7 @@ That becomes:  -4391 Can you do it by hand?
 ## 1. 返回值
 
 
-*** python的函数返回值是否可以有多个? ***
+***python的函数返回值是否可以有多个?***
 
 
 
@@ -1627,15 +1627,265 @@ else:
 
 
 
+# Ex.32 Loops and Lists 循环和列表
+
+## 0. Code 
+
+```
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+# this first kind of for-loop goes through a list
+for number in the_count:
+	print "This is count %d" % number
+
+# same as above
+for fruit in fruits:
+	print "A fruit of type: %s" % fruit
+
+# also we can go through mixed lists too
+# notice we have to use %r since we don't know what's in it
+for i in change:
+	print "I got %r" % i
+
+# we can also build lists, first start with an empty one
+elements = []
+
+# then use the range function to do 0 to 5 counts
+for i in range(0, 6):
+	print "Adding %d to the list." % i
+	# append is a function that lists understand
+	elements.append(i)
+
+# now we can print them out too
+for i in elements:
+	print "Elements was: %d" % i
+
+```
+
+
+## 1. for 循环
+
+for循环将列表中的每个元素取出, 配合列表使用.
+
+或者使用 range 函数 生成列表
+
+for fruit in fruits:
+
+## 2. range 范围, 排列
+
+生成列表, 最后一个元素不出现.
+
+## 3. 列表
+
+append 是列表追加函数, 将元素追加的列表后面. 
+
+## 4. 二维列表
+
+如何创建 ?
+[[1,2,3],[4,5,6]]
+
+# Ex.33 While Loops
+
+## 0. Code
+
+```
+i = 0
+numbers = []
+
+while i < 6:
+	print "At the top i is %d" % i
+	numbers.append(i)
+
+	i = i + 1
+	print "Numbers now: ", numbers
+	print "At the bottom i is %d" % i
+
+
+print "The numbers: "
+
+for num in numbers:
+	print num
+
+```
+
+
+# Ex.34 Accessing Elements of Lists 访问列表中的元素
+
+## 0. Code
+
+```
+animals = ['bear', 'python', 'peacock', 'kangaroo', 'whale', 'platypus']
+
+print "The animal at 1. is %s" % animals[1]
+print "The 3rd animal is %s" % animals[2]
+print "The 1st animal is %s" % animals[0]
+print "The animal at 3 is %s" % animals[3]
+
+print "The 5th animal is %s" % animals[4]
+print "The animal at 2 is %s" % animals[2]
+print "The 6th animal is %s" % animals[5]
+print "The animal at 4 is %s" % animals[4]
+
+```
+
+
+# Ex.35 Branches and Functions 分支和函数
+
+## 0. Code
+
+```
+from sys import exit
+
+def gold_room():
+    print "This room is full of gold. How much do you take?"
+
+    next = raw_input("> ")
+    if "0" in next or "1" in next:
+        how_much = int(next)
+    else:
+        dead("Man, learn to type a number.")
+
+    if how_much < 50:
+        print "Nice, you're not greedy, you win!"
+        exit(0)
+    else:
+        dead("You greedy bastard!")
+
+def bear_room():
+    print "There is a bear here."
+    print "The bear has a bunch of honey."
+    print "The fat bear is in front of anther door."
+    print "How are you going to move the bear ?"
+    bear_moved = False
+
+    while True:
+        next = raw_input("> ")
+
+        if next == "take honey":
+            dead("The bear looks at you then slaps your face off.")
+        elif next == "taunt bear" and not bear_moved:
+            print "The bear has moved from the door. You can go through it now."
+            bear_moved = True
+        elif next == "taunt bear" and bear_moved:
+            dead("The bear gets pissed off and chews your led off.")
+        elif next == "open door" and bear_moved:
+            gold_room()
+        else:
+            print "I got no idea what that mean."
+
+def cthulhu_room():
+    print "Here you see the great evil Cthulhu."
+    print "He, it, whatever stares at you and you go insance."
+    print "Do you flee for your life or eat your head?"
+
+    next = raw_input("> ")
+    if "flee" in next:
+        start()
+    elif "head" in next:
+        dead("Well that was tasty!")
+    else:
+        cthulhu_room()
+
+def dead(why):
+    print why, "Good job!"
+    exit(0)
+
+def start():
+    print "You are in a dark room."
+    print "There is a door to your right and left."
+    print "Which one do you take?"
+
+    next = raw_input("> ")
+
+    if next == "left":
+        bear_room()
+    elif next == "right":
+        cthulhu_room()
+    else:
+        dead("You stumble around the room until you starve.")
+
+
+start()
+
+```
+
+
+# Ex.36 Designing and Debugging
+
+## 0.Code
+
+```
+
+
+```
+
+## 1. if 和 else
+
+* if 和 else 同时配对, 即使在else没有任何意义的情况下, 如果添加上之后, 在出错的情况下会帮助你更好的调试程序.
+* 将一个 if 当做一个段落来对待, 与其他段落留一个空行的距离.
+* if 语句的布尔测试表达式应该很简单, 当过于复杂的时候, 把最终结果放在一个变量里.
+* 如果有多个 if 嵌套, 想办法把里面的 if 嵌套提出来, 放在函数中. 避免代码逻辑太复杂. 
 
 
 
+## 2. 调试技巧
+
+多用print, 实现小部分代码之后尽快调试. 不要等所有代码都实现了才调试.
+
+## 3. 循环
+
+只有在循环永不停止时使用“while 循环”,这意味着你可能永远都用不到。这条只有 Python 中成立,其他的语言另当别论。
+
+***不懂***
+
+## 4. 
+
+
+
+# Ex.37 Symbol Review
+
+http://learnpythonthehardway.org/book/ex37.html
  
- 
 
 
 
 
+# Ex.38 Doing Things to List 列表的操作
+
+
+# 0. Code
+
+```
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+print "Wait there are not 10 things in that list. Let's fix that."
+
+stuff = ten_things.split(' ')
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
+
+while len(stuff) != 10:
+    next_one = more_stuff.pop()
+    print "Adding: ", next_one
+    stuff.append(next_one)
+    print "There are %d items now." % len(stuff)
+
+print "There we go: ", stuff
+
+print "Let's do some things with stuff."
+
+print 'stuff[1] = %s' % stuff[1]
+print 'stuff[-1] = %s' % stuff[-1] # whoa! fance
+print 'stuff.pop() = %s' % stuff.pop()
+print ' '.join(stuff) # what? cool!
+print '#'.join(stuff[3:5]) #super stellar!
+print '-'.join(stuff)
+```
+
+# 1. join
+
+join 用指定的字符链接 list的成员.
 
 
 
